@@ -24,7 +24,7 @@
 	<div class="section graph" id="graph4" style="height:200px;background-color:#eee"></div>
 	<div class="section graph" id="graph5" style="height:200px;background-color:#ddd"></div>
 	<div class="section text" id="text6" style="height:300px;background-color:#fa0"></div>
-	<div class="heading" id="heading4" style="height:300px;background-color:#ff0"></div>
+	<div class="heading" id="heading4" style="height:300px;background-color:#ff0" oncopy="myFunction()">Copy This</div>
 	<div class="section text" id="text7" style="height:300px;background-color:#f80">
 		<a href="https://test.com">Data Boutique:  Dataset 1</a>
 		<a href="https://test.com">Data Boutique:  Dataset 2</a>
@@ -34,6 +34,10 @@
 <script>
 	for (var i = document.querySelectorAll('div').length - 1; i >= 0; i--) {
 		document.querySelectorAll('div')[i].innerHTML = document.querySelectorAll('div')[i].innerHTML + document.querySelectorAll('div')[i].className + ' : ' + document.querySelectorAll('div')[i].id;
+	}
+	function myFunction()
+	{
+		console.log('Yeah baby copy copy copy');
 	}
 </script>
 </body>
