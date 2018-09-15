@@ -1,8 +1,22 @@
 
 <script type='text/javascript' src='https://d1aqhv4sn5kxtx.cloudfront.net/actiontag/at.js' crossorigin='anonymous'></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125821161-1"></script>
 <script>
-setInterval(function(){
-  try{if(!!document.querySelector('.content.thankYou')){console.log('FORM MADE IT THROUGH, MY BABY')}}catch(e){}
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-125821161-1');
+</script>
+<script>
+var submitOncer = setInterval(function(){
+  try{if(!!document.querySelector('.content.thankYou')){
+  	console.log('FORM MADE IT THROUGH, MY BABY');
+	gtag('event','click',{
+		'event_action': 'Stand Up, Fight Back!',
+		'event_category': 'Form Submit'
+	});
+	clearInterval(submitOncer);
+  }}catch(e){}
 
   try{document.body.removeEventListener("click", myInteractionFunc, false);}catch(err){};
   document.body.addEventListener("click", myInteractionFunc, false);
