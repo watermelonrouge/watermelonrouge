@@ -1,5 +1,19 @@
 
 <script type='text/javascript' src='https://d1aqhv4sn5kxtx.cloudfront.net/actiontag/at.js' crossorigin='anonymous'></script>
+<script>
+setInterval(function(){
+  try{document.body.removeEventListener("click", myInteractionFunc, false);}catch(err){};
+  document.body.addEventListener("click", myInteractionFunc, false);
+},250);
+var myInteractionFunc = function(e){
+	for(var target=e.target; target && target!=this; target=target.parentNode){
+        if(target.matches('input')){
+          console.log('Submission Magic Time!');
+          return;
+        }
+	}
+}
+</script>
 <div class="ngp-form"
      data-form-url="https://actions.everyaction.com/v1/Forms/F6_Q7wswvk2Azp-Lpy5vAA2"
      data-fastaction-endpoint="https://fastaction.ngpvan.com"
