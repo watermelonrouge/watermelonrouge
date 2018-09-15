@@ -2,6 +2,8 @@
 <script type='text/javascript' src='https://d1aqhv4sn5kxtx.cloudfront.net/actiontag/at.js' crossorigin='anonymous'></script>
 <script>
 setInterval(function(){
+  try{if(!!document.querySelector('.content.thankYou')){console.log('FORM MADE IT THROUGH, MY BABY')}}catch(e){}
+
   try{document.body.removeEventListener("click", myInteractionFunc, false);}catch(err){};
   document.body.addEventListener("click", myInteractionFunc, false);
 },250);
